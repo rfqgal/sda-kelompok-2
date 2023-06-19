@@ -24,7 +24,13 @@ $pekerjaan_ayah = $_POST['pekerj_ayah'];
 $no_telepon_ayah = $_POST['no_ayah'];
 $alamat = $_POST['alamat'];
 
-$query = "INSERT INTO data_siswa VALUES('$nama','$nik','$tempat_lahir','$tgl_lahir','$nisn','$jenis_kelamin','$agama','$sekolah','$no_telepon','$nama_ibu','$tempat_lahir_ibu','$tgl_lahir_ibu','$pendidikan_terakhir_ibu','$pekerjaan_ibu','$no_telepon_ibu','$tempat_lahir_ayah','$tanggal_lahir_ayah','$pendidikan_terakhir_ayah','$nama_ayah','$pekerjaan_ayah','$no_telepon_ayah','$alamat')";
+$query = "INSERT INTO data_siswa VALUES(
+    '$nama','$nik','$tempat_lahir','$tgl_lahir','$nisn','$jenis_kelamin',
+    '$agama','$sekolah','$no_telepon','$nama_ibu','$tempat_lahir_ibu','$tgl_lahir_ibu',
+    '$pendidikan_terakhir_ibu','$pekerjaan_ibu','$no_telepon_ibu','$nama_ayah',
+    '$tempat_lahir_ayah','$tanggal_lahir_ayah','$pendidikan_terakhir_ayah','$pekerjaan_ayah',
+    '$no_telepon_ayah','$alamat'
+)";
 
 mysqli_query($koneksi, $query);
 if( $query ) {
