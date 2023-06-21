@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form class="" action="proses.php" method="post">
+    <form class="" action="proses.php?action=create" method="post">
         <p>
             <label for="nama">Nama: </label>
             <input type="text" name="nama" placeholder="nama lengkap" />
