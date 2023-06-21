@@ -16,7 +16,6 @@ mysqli_close($connect);
 
 <body>
     <header>
-        <h3>DATA SISWA</h3>
         <h1>SMK KELOMPOK 2</h1>
     </header>
 
@@ -59,9 +58,9 @@ mysqli_close($connect);
                     <td><?= $row['sekolah'] ?></td>
                     <td><?= $row['alamat'] ?></td>
                     <td style="text-align: center;">
-                        <a href=<?= "siswa/" . $row['id'] ?>>Lihat</a>
-                        <a href=<?= "siswa/edit/" . $row['id'] ?>>Ubah</a>
-                        <a href=<?= "siswa/hapus/" . $row['id'] ?>>Hapus</a>
+                        <a href=<?= "siswa.php?id=" . $row['id'] ?>>Lihat</a>
+                        <a href=<?= "edit.php?id=" . $row['id'] ?>>Ubah</a>
+                        <a href=<?= "proses.php?action=hapus&id=" . $row['id'] ?>>Hapus</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
