@@ -40,15 +40,64 @@ switch ($_GET['action']) {
             '$nama_ayah','$tempat_lahir_ayah','$tanggal_lahir_ayah',
             '$pendidikan_terakhir_ayah','$pekerjaan_ayah','$telepon_ayah'
         )";
+
+        $simpan = mysqli_query($koneksi, $query);
+        if( $query ) {
+            // kalau berhasil alihkan ke halaman index.php dengan status=created
+            header('Location: index.php?status=created');
+        } else {
+            // kalau gagal alihkan ke halaman indek.php dengan status=not-created
+            header('Location: index.php?status=not-created');
+        }
+        break;
+    case 'update':
+        $id = $_POST['id'];
+
+        $nama = $_POST['nama'];
+        $nik = $_POST['nik'];
+        $tempat_lahir = $_POST['tempat_lahir'];
+        $tanggal_lahir = $_POST['tanggal_lahir'];
+        $nisn = $_POST['nisn'];
+        $jenis_kelamin = $_POST['jenis_kelamin'];
+        $agama = $_POST['agama'];
+        $sekolah = $_POST['sekolah'];
+        $telepon = $_POST['telepon'];
+        $alamat = $_POST['alamat'];
+
+        $nama_ibu = $_POST['nama_ibu'];
+        $tempat_lahir_ibu = $_POST['tempat_lahir_ibu'];
+        $tanggal_lahir_ibu = $_POST['tanggal_lahir_ibu'];
+        $pendidikan_terakhir_ibu = $_POST['pendidikan_terakhir_ibu'];
+        $pekerjaan_ibu = $_POST['pekerjaan_ibu'];
+        $telepon_ibu = $_POST['telepon_ibu'];
+
+        $nama_ayah = $_POST['nama_ayah'];
+        $tempat_lahir_ayah = $_POST['tempat_lahir_ayah'];
+        $tanggal_lahir_ayah = $_POST['tanggal_lahir_ayah'];
+        $pendidikan_terakhir_ayah = $_POST['pendidikan_terakhir_ayah'];
+        $pekerjaan_ayah = $_POST['pekerjaan_ayah'];
+        $telepon_ayah = $_POST['telepon_ayah'];
+
+        $query = "UPDATE db_siswa.data_siswa
+            SET nama='$nama', nik='$nik', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', nisn='$nisn', 
+                jenis_kelamin='$jenis_kelamin', agama='$agama', sekolah='$sekolah', telepon='$telepon', alamat='$alamat', 
+                
+                nama_ibu='$nama_ibu', tempat_lahir_ibu='$tempat_lahir_ibu', tanggal_lahir_ibu='$tanggal_lahir_ibu', 
+                pendidikan_terakhir_ibu='$pendidikan_terakhir_ibu', pekerjaan_ibu='$pekerjaan_ibu', telepon_ibu='$telepon_ibu', 
+                
+                nama_ayah='$nama_ayah', tempat_lahir_ayah='$tempat_lahir_ayah', tanggal_lahir_ayah='$tanggal_lahir_ayah', 
+                pendidikan_terakhir_ayah='$pendidikan_terakhir_ayah', pekerjaan_ayah='$pekerjaan_ayah', telepon_ayah='$telepon_ayah'
+            WHERE id = $id";
+
         echo $query;
 
         $simpan = mysqli_query($koneksi, $query);
         if( $query ) {
-            // kalau berhasil alihkan ke halaman index.php dengan status=sukses
-            header('Location: index.php?status=sukses');
+            // kalau berhasil alihkan ke halaman index.php dengan status=updated
+            header('Location: index.php?status=updated');
         } else {
-            // kalau gagal alihkan ke halaman indek.php dengan status=gagal
-            header('Location: index.php?status=gagal');
+            // kalau gagal alihkan ke halaman indek.php dengan status=not-updated
+            header('Location: index.php?status=not-updated');
         }
         break;
 }

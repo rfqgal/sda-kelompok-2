@@ -15,23 +15,28 @@ mysqli_close($connect);
 </head>
 
 <body>
+    <?php if(isset($_GET['status'])): ?>
+        <script>
+            const status = new URLSearchParams(window.location.search).get('status');
+            
+            if (status === 'created') {
+                alert('Input siswa berhasil!');                    
+            } else if (status === 'not-created') {
+                alert('Input siswa gagal!');
+            } else if (status === 'updated') {
+                alert('Edit siswa berhasil!');                    
+            } else if (status === 'not-updated') {
+                alert('Edit siswa gagal!');
+            }
+        </script>
+    <?php endif; ?>
+    
     <header>
         <h1>SMK KELOMPOK 2</h1>
     </header>
 
     <h4>Menu</h4>
     <nav>
-        <?php if(isset($_GET['status'])): ?>
-            <p>
-                <?php
-                    if($_GET['status'] == 'sukses'){
-                        echo "Input siswa berhasil!";
-                    } else {
-                        echo "Input siswa gagal!";
-                    }
-                ?>
-            </p>
-        <?php endif; ?>
         <ul>
             <li><a href="daftar.php">Input Baru</a></li>
         </ul>
@@ -60,7 +65,7 @@ mysqli_close($connect);
                         <td><?= $row['alamat'] ?></td>
                         <td style="text-align: center;">
                             <a href=<?= "siswa.php?id=" . $row['id'] ?>>Lihat</a>
-                            <a href=<?= "edit.php?id=" . $row['id'] ?>>Ubah</a>
+                            <a href=<?= "edit.php?id=" . $row['id'] ?>>Edit</a>
                             <a href=<?= "proses.php?action=hapus&id=" . $row['id'] ?>>Hapus</a>
                         </td>
                     </tr>
