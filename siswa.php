@@ -30,11 +30,11 @@ mysqli_close($connect);
     <?php if (is_null($siswa)): ?>
         <h2>Siswa tidak ditemukan</h2>
     <?php else: ?>
-        <h1>Siswa SMK Kelompok 2</h1>
+        <h1>SMK KELOMPOK 2</h1>
 
         <table>
             <tr id="data-siswa">
-                <td class="table-vertical-divider" style="padding-bottom: 4px;">
+                <td class="table-vertical-divider" style="padding-bottom: 8px;">
                     Data Siswa
                 </td>
             </tr>
@@ -86,7 +86,7 @@ mysqli_close($connect);
                 <td><?= $siswa['alamat'] ?></td>
             </tr>
             <tr id="data-ibu">
-                <td class="table-vertical-divider" style="padding: 16px 0 4px 0;">
+                <td class="table-vertical-divider" style="padding: 24px 0 8px 0;">
                     Data Ibu
                 </td>
             </tr>
@@ -118,7 +118,7 @@ mysqli_close($connect);
                 <td><?= $siswa['telepon_ibu'] ?></td>
             </tr>
             <tr id="data-ayah">
-                <td class="table-vertical-divider" style="padding: 16px 0 4px 0;">
+                <td class="table-vertical-divider" style="padding: 24px 0 8px 0;">
                     Data Ayah
                 </td>
             </tr>
