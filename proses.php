@@ -46,4 +46,5 @@ if( $query ) {
     header('Location: index.php?status=gagal');
 }
 
+mysqli_close($koneksi);
 ?>
