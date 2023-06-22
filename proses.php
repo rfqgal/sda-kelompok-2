@@ -41,8 +41,9 @@ switch ($_GET['action']) {
             '$pendidikan_terakhir_ayah','$pekerjaan_ayah','$telepon_ayah'
         )";
 
-        $simpan = mysqli_query($koneksi, $query);
-        if( $query ) {
+        $create = mysqli_query($koneksi, $query);
+
+        if ($create) {
             // kalau berhasil alihkan ke halaman index.php dengan status=created
             header('Location: index.php?status=created');
         } else {
@@ -89,15 +90,29 @@ switch ($_GET['action']) {
                 pendidikan_terakhir_ayah='$pendidikan_terakhir_ayah', pekerjaan_ayah='$pekerjaan_ayah', telepon_ayah='$telepon_ayah'
             WHERE id = $id";
 
-        echo $query;
+        $update = mysqli_query($koneksi, $query);
 
-        $simpan = mysqli_query($koneksi, $query);
-        if( $query ) {
+        if ($update) {
             // kalau berhasil alihkan ke halaman index.php dengan status=updated
             header('Location: index.php?status=updated');
         } else {
             // kalau gagal alihkan ke halaman indek.php dengan status=not-updated
             header('Location: index.php?status=not-updated');
+        }
+        break;
+    case 'delete':
+        $id = $_GET['id'];
+
+        $query = "DELETE FROM db_siswa.data_siswa WHERE id=$id";
+        
+        $delete = mysqli_query($koneksi, $query);
+        
+        if ($delete) {
+            // kalau berhasil alihkan ke halaman index.php dengan status=deleted
+            header('Location: index.php?status=deleted');
+        } else {
+            // kalau gagal alihkan ke halaman indek.php dengan status=not-deleted
+            header('Location: index.php?status=not-deleted');
         }
         break;
 }

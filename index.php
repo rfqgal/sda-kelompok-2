@@ -17,17 +17,35 @@ mysqli_close($connect);
 <body>
     <?php if(isset($_GET['status'])): ?>
         <script>
-            const status = new URLSearchParams(window.location.search).get('status');
+            const params = new URLSearchParams(window.location.search);
+            const status = params.get('status');
             
-            if (status === 'created') {
-                alert('Input siswa berhasil!');                    
-            } else if (status === 'not-created') {
-                alert('Input siswa gagal!');
-            } else if (status === 'updated') {
-                alert('Edit siswa berhasil!');                    
-            } else if (status === 'not-updated') {
-                alert('Edit siswa gagal!');
+            switch (status) {
+                case 'created':
+                    alert('Input siswa berhasil!');
+                    break;
+                case 'not-created':
+                    alert('Input siswa gagal!');
+                    break;
+
+                case 'updated':
+                    alert('Edit siswa berhasil!');
+                    break;
+                case 'not-updated':
+                    alert('Edit siswa gagal!');
+                    break;
+
+                case 'deleted':
+                    alert('Hapus siswa berhasil!');
+                    break;
+                case 'not-deleted':
+                    alert('Hapus siswa gagal!');
+                    break;
+            
+                default:
+                    break;
             }
+            window.location.search = '';
         </script>
     <?php endif; ?>
     
@@ -66,7 +84,7 @@ mysqli_close($connect);
                         <td style="text-align: center;">
                             <a href=<?= "siswa.php?id=" . $row['id'] ?>>Lihat</a>
                             <a href=<?= "edit.php?id=" . $row['id'] ?>>Edit</a>
-                            <a href=<?= "proses.php?action=hapus&id=" . $row['id'] ?>>Hapus</a>
+                            <a onclick="deleteSiswa(<?= $row['id'] ?>, `<?= $row['nama'] ?>`)" href="#">Hapus</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -78,4 +96,14 @@ mysqli_close($connect);
     </div>
 
     </body>
+
+    <script>
+        function deleteSiswa(id, name) {
+            const confirmDelete = confirm(`Apakah Anda yakin untuk menghapus siswa ${name}?`);
+            
+            if (confirmDelete) {
+                window.location = "proses.php?action=delete&id=" + id;
+            }
+        }
+    </script>
 </html>
