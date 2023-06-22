@@ -32,6 +32,13 @@ mysqli_close($connect);
     <?php else: ?>
         <h1>SMK KELOMPOK 2</h1>
 
+        <p>
+            <a href="index.php">Home</a> > <span style="font-weight: bolder; text-decoration: underline;">
+                Siswa
+            </span>
+        </p>
+        <br>
+
         <table>
             <tr id="data-siswa">
                 <td class="table-vertical-divider" style="padding-bottom: 8px;">
