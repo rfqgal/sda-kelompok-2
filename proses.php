@@ -30,19 +30,30 @@ switch ($_GET['action']) {
         $pekerjaan_ayah = $_POST['pekerjaan_ayah'];
         $telepon_ayah = $_POST['telepon_ayah'];
 
-        $query = "INSERT INTO data_siswa VALUES(
-            '$id','$nama','$nik','$tempat_lahir','$tanggal_lahir','$nisn',
-            '$jenis_kelamin','$agama','$sekolah_asal','$telepon','$alamat',
-
-            '$nama_ibu','$tempat_lahir_ibu','$tanggal_lahir_ibu',
-            '$pendidikan_terakhir_ibu','$pekerjaan_ibu','$telepon_ibu',
+        $query = "INSERT INTO db_siswa.data_siswa 
+            (nama, nik, tempat_lahir, tanggal_lahir, nisn,
+            jenis_kelamin, agama, sekolah, telepon, alamat,
             
-            '$nama_ayah','$tempat_lahir_ayah','$tanggal_lahir_ayah',
-            '$pendidikan_terakhir_ayah','$pekerjaan_ayah','$telepon_ayah'
-        )";
+            nama_ibu, tempat_lahir_ibu, tanggal_lahir_ibu,
+            pendidikan_terakhir_ibu, pekerjaan_ibu, telepon_ibu,
+            
+            nama_ayah, tempat_lahir_ayah, tanggal_lahir_ayah,
+            pendidikan_terakhir_ayah, pekerjaan_ayah, telepon_ayah)
 
-        $simpan = mysqli_query($koneksi, $query);
-        if( $query ) {
+            VALUES(
+                '$nama','$nik','$tempat_lahir','$tanggal_lahir','$nisn',
+                '$jenis_kelamin','$agama','$sekolah_asal','$telepon','$alamat',
+
+                '$nama_ibu','$tempat_lahir_ibu','$tanggal_lahir_ibu',
+                '$pendidikan_terakhir_ibu','$pekerjaan_ibu','$telepon_ibu',
+                
+                '$nama_ayah','$tempat_lahir_ayah','$tanggal_lahir_ayah',
+                '$pendidikan_terakhir_ayah','$pekerjaan_ayah','$telepon_ayah'
+            )";
+
+        $create = mysqli_query($koneksi, $query);
+
+        if ($create) {
             // kalau berhasil alihkan ke halaman index.php dengan status=created
             header('Location: index.php?status=created');
         } else {
@@ -89,15 +100,29 @@ switch ($_GET['action']) {
                 pendidikan_terakhir_ayah='$pendidikan_terakhir_ayah', pekerjaan_ayah='$pekerjaan_ayah', telepon_ayah='$telepon_ayah'
             WHERE id = $id";
 
-        echo $query;
+        $update = mysqli_query($koneksi, $query);
 
-        $simpan = mysqli_query($koneksi, $query);
-        if( $query ) {
+        if ($update) {
             // kalau berhasil alihkan ke halaman index.php dengan status=updated
             header('Location: index.php?status=updated');
         } else {
             // kalau gagal alihkan ke halaman indek.php dengan status=not-updated
             header('Location: index.php?status=not-updated');
+        }
+        break;
+    case 'delete':
+        $id = $_GET['id'];
+
+        $query = "DELETE FROM db_siswa.data_siswa WHERE id=$id";
+        
+        $delete = mysqli_query($koneksi, $query);
+        
+        if ($delete) {
+            // kalau berhasil alihkan ke halaman index.php dengan status=deleted
+            header('Location: index.php?status=deleted');
+        } else {
+            // kalau gagal alihkan ke halaman indek.php dengan status=not-deleted
+            header('Location: index.php?status=not-deleted');
         }
         break;
 }
