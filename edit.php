@@ -21,27 +21,27 @@ mysqli_close($connect);
 <body>
     <form class="" action="proses.php?action=update" method="post">
         <p hidden>
-            <input type="text" name="id" placeholder="id siswa di database" value="<?= $siswa['id'] ?>" />
+            <input type="text" name="id" placeholder="id siswa di database" value="<?= $siswa['id'] ?>" required />
         </p>
         <p>
             <label for="nama">Nama: </label>
-            <input type="text" name="nama" placeholder="nama lengkap" value="<?= $siswa['nama'] ?>" />
+            <input type="text" name="nama" placeholder="nama lengkap" value="<?= $siswa['nama'] ?>" required />
         </p>
         <p>
             <label for="nik">NIK:</label>
-            <input type="text" name="nik" placeholder="nik harus 12 digit" value="<?= $siswa['nik'] ?>" />
+            <input type="text" name="nik" placeholder="nik harus 12 digit" value="<?= $siswa['nik'] ?>" required />
         </p>
         <p>
             <label for="tempat_lahir">Tempat Lahir:</label>
-            <input type="text" name="tempat_lahir" placeholder="tempat lahir" value="<?= $siswa['tempat_lahir'] ?>" />
+            <input type="text" name="tempat_lahir" placeholder="tempat lahir" value="<?= $siswa['tempat_lahir'] ?>" required />
         </p>
         <p>
             <label for="tanggal_lahir">Tanggal Lahir:</label>
-            <input type="date" name="tanggal_lahir" value="<?= $siswa['tanggal_lahir'] ?>" />
+            <input type="date" name="tanggal_lahir" value="<?= $siswa['tanggal_lahir'] ?>" required />
         </p>
         <p>
             <label for="nisn">NISN:</label>
-            <input type="text" name="nisn" placeholder="nisn 10 digit" value="<?= $siswa['nisn'] ?>" />
+            <input type="text" name="nisn" placeholder="nisn 10 digit" value="<?= $siswa['nisn'] ?>" required />
         </p>
         <p>
             <label for="jenis_kelamin">Jenis Kelamin: </label>
@@ -58,7 +58,7 @@ mysqli_close($connect);
         </p>
         <p>
             <label for="agama">Agama: </label>
-            <select name="agama">
+            <select name="agama" required>
                 <option <?php if ($siswa['agama'] == 'Islam'): ?>
                     selected
                 <?php endif; ?>>Islam</option>
@@ -78,11 +78,11 @@ mysqli_close($connect);
         </p>
         <p>
             <label for="sekolah">Sekolah Asal: </label>
-            <input type="text" name="sekolah" placeholder="nama sekolah asal" value="<?= $siswa['sekolah'] ?>" />
+            <input type="text" name="sekolah" placeholder="nama sekolah asal" value="<?= $siswa['sekolah'] ?>" required />
         </p>
         <p>
             <label for="telepon">No Telepon:</label>
-            <input type="text" name="telepon" placeholder="nomor telepon aktif" value="<?= $siswa['telepon'] ?>" />
+            <input type="text" name="telepon" placeholder="nomor telepon aktif" value="<?= $siswa['telepon'] ?>" required />
         </p>
         <p>
             <label for="alamat">Alamat: </label>
@@ -92,19 +92,19 @@ mysqli_close($connect);
         <br>
         <p>
             <label for="nama_ibu">Nama Ibu:</label>
-            <input type="text" name="nama_ibu" placeholder="nama ibu kandung" value="<?= $siswa['nama_ibu'] ?>" />
+            <input type="text" name="nama_ibu" placeholder="nama ibu kandung" value="<?= $siswa['nama_ibu'] ?>" required />
         </p>
         <p>
             <label for="tempat_lahir_ibu">Tempat Lahir:</label>
-            <input type="text" name="tempat_lahir_ibu" placeholder="tempat lahir ibu" value="<?= $siswa['tempat_lahir_ibu'] ?>" />
+            <input type="text" name="tempat_lahir_ibu" placeholder="tempat lahir ibu" value="<?= $siswa['tempat_lahir_ibu'] ?>" required />
         </p>
         <p>
             <label for="tanggal_lahir_ibu">Tanggal Lahir:</label>
-            <input type="date" name="tanggal_lahir_ibu" value="<?= $siswa['tanggal_lahir_ibu'] ?>" />
+            <input type="date" name="tanggal_lahir_ibu" value="<?= $siswa['tanggal_lahir_ibu'] ?>" required />
         </p>
         <p>
             <label for="pendidikan_terakhir_ibu">Pendidikan Terakhir Ibu:</label>
-            <select name="pendidikan_terakhir_ibu">
+            <select name="pendidikan_terakhir_ibu" required>
                 <option <?php if ($siswa['pendidikan_terakhir_ibu'] == 'SD/Sederajat'): ?>
                     selected
                 <?php endif; ?>>SD/Sederajat</option>
@@ -136,33 +136,33 @@ mysqli_close($connect);
                     selected
                 <?php endif; ?>>Tidak Sekolah</option>
             </select>
-        </P>
+        </p>
         <p>
             <label for="pekerjaan_ibu">Pekerjaan:</label>
-            <input type="text" name="pekerjaan_ibu" placeholder="pekerjaan ibu" value="<?= $siswa['pekerjaan_ibu'] ?>" />
+            <input type="text" name="pekerjaan_ibu" placeholder="pekerjaan ibu" value="<?= $siswa['pekerjaan_ibu'] ?>" required />
         </p>
         <p>
             <label for="telepon_ibu">No Telepon:</label>
-            <input type="text" name="telepon_ibu" placeholder="nomor telepon ibu" value="<?= $siswa['telepon_ibu'] ?>" />
+            <input type="text" name="telepon_ibu" placeholder="nomor telepon ibu" value="<?= $siswa['telepon_ibu'] ?>" required />
         </p>
 
         <br>
         <p>
             <label for="nama_ayah">Nama Ayah:</label>
-            <input type="text" name="nama_ayah" placeholder="nama lengkap ayah" value="<?= $siswa['nama_ayah'] ?>" />
-        </P>
+            <input type="text" name="nama_ayah" placeholder="nama lengkap ayah" value="<?= $siswa['nama_ayah'] ?>" required />
+        </p>
         <p>
             <label for="tempat_lahir_ayah">Tempat Lahir:</label>
-            <input type="text" name="tempat_lahir_ayah" placeholder="tempat lahir ayah" value="<?= $siswa['tempat_lahir_ayah'] ?>" />
-        </P>
+            <input type="text" name="tempat_lahir_ayah" placeholder="tempat lahir ayah" value="<?= $siswa['tempat_lahir_ayah'] ?>" required />
+        </p>
         <p>
             <label for="tanggal_lahir_ayah">Tanggal Lahir:</label>
-            <input type="date" name="tanggal_lahir_ayah" value="<?= $siswa['tanggal_lahir_ayah'] ?>" />
-        </P>
-        <P>
+            <input type="date" name="tanggal_lahir_ayah" value="<?= $siswa['tanggal_lahir_ayah'] ?>" required />
+        </p>
+        <p>
             <label for="pendidikan_terakhir_ayah">Pendidikan Terakhir Ayah:</label>
-            <select name="pendidikan_terakhir_ayah">
-            <option <?php if ($siswa['pendidikan_terakhir_ayah'] == 'SD/Sederajat'): ?>
+            <select name="pendidikan_terakhir_ayah" required>
+                <option <?php if ($siswa['pendidikan_terakhir_ayah'] == 'SD/Sederajat'): ?>
                     selected
                 <?php endif; ?>>SD/Sederajat</option>
                 <option <?php if ($siswa['pendidikan_terakhir_ayah'] == 'SMP/Sederajat'): ?>
@@ -196,12 +196,11 @@ mysqli_close($connect);
         </p>
         <p>
             <label for="pekerjaan_ayah">Pekerjaan:</label>
-            <input type="text" name="pekerjaan_ayah" placeholder="pekerjaan ayah" value="<?= $siswa['pekerjaan_ayah'] ?>" />
-        </P>
+            <input type="text" name="pekerjaan_ayah" placeholder="pekerjaan ayah" value="<?= $siswa['pekerjaan_ayah'] ?>" required />
+        </p>
         <p>
             <label for="telepon_ayah">No Telepon:</label>
-            <input type="text" name="telepon_ayah" placeholder="no telepon ayah" value="<?= $siswa['telepon_ayah'] ?>" />
-        </p>
+            <input type="text" name="telepon_ayah" placeholder="no telepon ayah" value="<?= $siswa['telepon_ayah'] ?>" required />
         </p>
 
         <br>
