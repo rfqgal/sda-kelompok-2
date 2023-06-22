@@ -30,16 +30,26 @@ switch ($_GET['action']) {
         $pekerjaan_ayah = $_POST['pekerjaan_ayah'];
         $telepon_ayah = $_POST['telepon_ayah'];
 
-        $query = "INSERT INTO data_siswa VALUES(
-            '$id','$nama','$nik','$tempat_lahir','$tanggal_lahir','$nisn',
-            '$jenis_kelamin','$agama','$sekolah_asal','$telepon','$alamat',
-
-            '$nama_ibu','$tempat_lahir_ibu','$tanggal_lahir_ibu',
-            '$pendidikan_terakhir_ibu','$pekerjaan_ibu','$telepon_ibu',
+        $query = "INSERT INTO db_siswa.data_siswa 
+            (nama, nik, tempat_lahir, tanggal_lahir, nisn,
+            jenis_kelamin, agama, sekolah, telepon, alamat,
             
-            '$nama_ayah','$tempat_lahir_ayah','$tanggal_lahir_ayah',
-            '$pendidikan_terakhir_ayah','$pekerjaan_ayah','$telepon_ayah'
-        )";
+            nama_ibu, tempat_lahir_ibu, tanggal_lahir_ibu,
+            pendidikan_terakhir_ibu, pekerjaan_ibu, telepon_ibu,
+            
+            nama_ayah, tempat_lahir_ayah, tanggal_lahir_ayah,
+            pendidikan_terakhir_ayah, pekerjaan_ayah, telepon_ayah)
+
+            VALUES(
+                '$nama','$nik','$tempat_lahir','$tanggal_lahir','$nisn',
+                '$jenis_kelamin','$agama','$sekolah_asal','$telepon','$alamat',
+
+                '$nama_ibu','$tempat_lahir_ibu','$tanggal_lahir_ibu',
+                '$pendidikan_terakhir_ibu','$pekerjaan_ibu','$telepon_ibu',
+                
+                '$nama_ayah','$tempat_lahir_ayah','$tanggal_lahir_ayah',
+                '$pendidikan_terakhir_ayah','$pekerjaan_ayah','$telepon_ayah'
+            )";
 
         $create = mysqli_query($koneksi, $query);
 
