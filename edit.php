@@ -15,10 +15,18 @@ mysqli_close($connect);
 <head>
     <meta charset="utf-8">
     <title>Form Edit Data Siswa</title>
-    <h1>PERUBAHAN DATA SISWA</h1>
 </head>
 
 <body>
+    <h1>PERUBAHAN DATA SISWA</h1>
+
+    <p>
+        <a href="index.php">Home</a> > <span style="font-weight: bolder; text-decoration: underline;">
+            Edit
+        </span>
+    </p>
+    <br>
+
     <form class="" action="proses.php?action=update" method="post">
         <p hidden>
             <input type="text" name="id" placeholder="id siswa di database" value="<?= $siswa['id'] ?>" required />
