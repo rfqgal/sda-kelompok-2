@@ -10,7 +10,7 @@ mysqli_close($connect);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DATA SISWA | SMK KELOMPOK 2</title>
+    <title>ADMINISTRASI SISWA SMK KELOMPOK 2</title>
     <link rel="stylesheet" href="css_file/index.css">
 </head>
 
@@ -47,7 +47,7 @@ mysqli_close($connect);
 <?php endif; ?>
 
 <header>
-    <h1>SMK KELOMPOK 2</h1>
+    <h1>DATA SISWA SMK </h1>
 </header>
 
 <h4>Menu</h4>
