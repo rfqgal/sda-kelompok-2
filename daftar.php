@@ -6,14 +6,15 @@
 <head>
     <meta charset="utf-8">
     <title>Form Input Data Siswa Baru</title>
+    <link rel="stylesheet" href="css_file/daftar.css">
 </head>
 
 <body>
     <h1>DATA SISWA BARU</h1>
 
     <p>
-        <a href="index.php">Home</a> > <span style="font-weight: bolder; text-decoration: underline;">
-            Input
+        <a href="index.php">Home</a> / <span style="font-weight: bolder;">
+            Registrasi
         </span>
     </p>
     <br>

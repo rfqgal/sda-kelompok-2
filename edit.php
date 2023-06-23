@@ -15,13 +15,14 @@ mysqli_close($connect);
 <head>
     <meta charset="utf-8">
     <title>Form Edit Data Siswa</title>
+    <link rel="stylesheet" href="css_file/daftar.css">
 </head>
 
 <body>
     <h1>PERUBAHAN DATA SISWA</h1>
 
     <p>
-        <a href="index.php">Home</a> > <span style="font-weight: bolder; text-decoration: underline;">
+        <a href="index.php">Home</a> / <span style="font-weight: bolder;">
             Edit
         </span>
     </p>
