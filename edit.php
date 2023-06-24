@@ -37,10 +37,6 @@ mysqli_close($connect);
             <input type="text" name="nama" placeholder="nama lengkap" value="<?= $siswa['nama'] ?>" required />
         </p>
         <p>
-            <label for="nik">NIK:</label>
-            <input type="text" name="nik" placeholder="nik harus 12 digit" value="<?= $siswa['nik'] ?>" required />
-        </p>
-        <p>
             <label for="tempat_lahir">Tempat Lahir:</label>
             <input type="text" name="tempat_lahir" placeholder="tempat lahir" value="<?= $siswa['tempat_lahir'] ?>" required />
         </p>

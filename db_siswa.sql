@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `data_siswa` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `nik` varchar(16) NOT NULL,
   `tempat_lahir` varchar(100) NOT NULL,
   `tanggal_lahir` varchar(10) NOT NULL,
   `nisn` varchar(10) NOT NULL,
@@ -57,9 +56,9 @@ CREATE TABLE `data_siswa` (
 -- Dumping data for table `data_siswa`
 --
 
-INSERT INTO `data_siswa` (`id`, `nama`, `nik`, `tempat_lahir`, `tanggal_lahir`, `nisn`, `jenis_kelamin`, `agama`, `sekolah`, `telepon`, `alamat`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pendidikan_terakhir_ibu`, `pekerjaan_ibu`, `telepon_ibu`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `pendidikan_terakhir_ayah`, `pekerjaan_ayah`, `telepon_ayah`) VALUES
-(1, 'Muhammad Diska Puja Utomo', '3172052512970002', 'Subang', '1997-12-25', '0001687234', 'laki-laki', 'Islam', 'SMPN 2 Compreng', '082299437446', 'jl. budimulia', 'Puji Lestari', 'Jakarta', '1979-04-27', 'SD/Sederajat', 'Ibu Rumah Tangga', '08229917243', 'Karman Bin Darji', 'Subang', '1976-08-14', 'SD/Sederajat', 'Wiraswasta', '08139036774'),
-(2, 'Rifky Galuh Yuliawan', '3561273579280001', 'Ponorogo', '2002-07-30', '1003812379', 'laki-laki', 'Islam', 'SMPN 4 Kepanjen', '6288220215021', 'Jl. Rahmat, Sukoraharjo', 'Sri Wahyuni', 'Ponorogo', '1979-08-21', 'SMA/Sederajat', 'Ibu Rumah Tangga', '6282233601282', 'Achmad Arif Jamhari', 'Malang', '1976-03-26', 'SMA/Sederajat', 'Swasta', '6285859960233');
+INSERT INTO `data_siswa` (`id`, `nama`, `tempat_lahir`, `tanggal_lahir`, `nisn`, `jenis_kelamin`, `agama`, `sekolah`, `telepon`, `alamat`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pendidikan_terakhir_ibu`, `pekerjaan_ibu`, `telepon_ibu`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `pendidikan_terakhir_ayah`, `pekerjaan_ayah`, `telepon_ayah`) VALUES
+(1, 'Muhammad Diska Puja Utomo', 'Subang', '1997-12-25', '0001687234', 'laki-laki', 'Islam', 'SMPN 2 Compreng', '082299437446', 'jl. budimulia', 'Puji Lestari', 'Jakarta', '1979-04-27', 'SD/Sederajat', 'Ibu Rumah Tangga', '08229917243', 'Karman Bin Darji', 'Subang', '1976-08-14', 'SD/Sederajat', 'Wiraswasta', '08139036774'),
+(2, 'Rifky Galuh Yuliawan', 'Ponorogo', '2002-07-30', '1003812379', 'laki-laki', 'Islam', 'SMPN 4 Kepanjen', '6288220215021', 'Jl. Rahmat, Sukoraharjo', 'Sri Wahyuni', 'Ponorogo', '1979-08-21', 'SMA/Sederajat', 'Ibu Rumah Tangga', '6282233601282', 'Achmad Arif Jamhari', 'Malang', '1976-03-26', 'SMA/Sederajat', 'Swasta', '6285859960233');
 
 --
 -- Indexes for dumped tables
@@ -70,10 +69,10 @@ INSERT INTO `data_siswa` (`id`, `nama`, `nik`, `tempat_lahir`, `tanggal_lahir`, 
 --
 ALTER TABLE `data_siswa`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nama` (`nama`,`nik`,`tempat_lahir`,`nisn`,`jenis_kelamin`,`agama`,`sekolah`,`telepon`,`nama_ibu`,`tempat_lahir_ibu`,`tanggal_lahir_ibu`,`pendidikan_terakhir_ibu`,`pekerjaan_ibu`,`telepon_ibu`,`nama_ayah`,`tempat_lahir_ayah`,`tanggal_lahir_ayah`,`pendidikan_terakhir_ayah`,`pekerjaan_ayah`,`telepon_ayah`,`alamat`) USING HASH,
-  ADD UNIQUE KEY `nama_2` (`nama`,`nik`,`tempat_lahir`,`nisn`,`jenis_kelamin`,`agama`,`sekolah`,`telepon`,`nama_ibu`,`tempat_lahir_ibu`,`tanggal_lahir_ibu`,`pendidikan_terakhir_ibu`,`pekerjaan_ibu`,`telepon_ibu`,`nama_ayah`,`tempat_lahir_ayah`,`tanggal_lahir_ayah`,`pendidikan_terakhir_ayah`,`pekerjaan_ayah`,`telepon_ayah`,`alamat`) USING HASH,
-  ADD UNIQUE KEY `nama_3` (`nama`,`nik`,`tempat_lahir`,`tanggal_lahir`,`nisn`,`jenis_kelamin`,`agama`,`sekolah`,`telepon`,`nama_ibu`,`tempat_lahir_ibu`,`tanggal_lahir_ibu`,`pendidikan_terakhir_ibu`,`pekerjaan_ibu`,`telepon_ibu`,`nama_ayah`,`tempat_lahir_ayah`,`tanggal_lahir_ayah`,`pendidikan_terakhir_ayah`,`pekerjaan_ayah`,`telepon_ayah`,`alamat`) USING HASH,
-  ADD UNIQUE KEY `nama_4` (`nama`,`nik`,`tempat_lahir`,`tanggal_lahir`,`nisn`,`jenis_kelamin`,`agama`,`sekolah`,`telepon`,`nama_ibu`,`tempat_lahir_ibu`,`tanggal_lahir_ibu`,`pendidikan_terakhir_ibu`,`pekerjaan_ibu`,`telepon_ibu`,`nama_ayah`,`tempat_lahir_ayah`,`tanggal_lahir_ayah`,`pendidikan_terakhir_ayah`,`pekerjaan_ayah`,`telepon_ayah`,`alamat`) USING HASH;
+  ADD UNIQUE KEY `nama` (`nama`,`tempat_lahir`,`nisn`,`jenis_kelamin`,`agama`,`sekolah`,`telepon`,`nama_ibu`,`tempat_lahir_ibu`,`tanggal_lahir_ibu`,`pendidikan_terakhir_ibu`,`pekerjaan_ibu`,`telepon_ibu`,`nama_ayah`,`tempat_lahir_ayah`,`tanggal_lahir_ayah`,`pendidikan_terakhir_ayah`,`pekerjaan_ayah`,`telepon_ayah`,`alamat`) USING HASH,
+  ADD UNIQUE KEY `nama_2` (`nama`,`tempat_lahir`,`nisn`,`jenis_kelamin`,`agama`,`sekolah`,`telepon`,`nama_ibu`,`tempat_lahir_ibu`,`tanggal_lahir_ibu`,`pendidikan_terakhir_ibu`,`pekerjaan_ibu`,`telepon_ibu`,`nama_ayah`,`tempat_lahir_ayah`,`tanggal_lahir_ayah`,`pendidikan_terakhir_ayah`,`pekerjaan_ayah`,`telepon_ayah`,`alamat`) USING HASH,
+  ADD UNIQUE KEY `nama_3` (`nama`,`tempat_lahir`,`tanggal_lahir`,`nisn`,`jenis_kelamin`,`agama`,`sekolah`,`telepon`,`nama_ibu`,`tempat_lahir_ibu`,`tanggal_lahir_ibu`,`pendidikan_terakhir_ibu`,`pekerjaan_ibu`,`telepon_ibu`,`nama_ayah`,`tempat_lahir_ayah`,`tanggal_lahir_ayah`,`pendidikan_terakhir_ayah`,`pekerjaan_ayah`,`telepon_ayah`,`alamat`) USING HASH,
+  ADD UNIQUE KEY `nama_4` (`nama`,`tempat_lahir`,`tanggal_lahir`,`nisn`,`jenis_kelamin`,`agama`,`sekolah`,`telepon`,`nama_ibu`,`tempat_lahir_ibu`,`tanggal_lahir_ibu`,`pendidikan_terakhir_ibu`,`pekerjaan_ibu`,`telepon_ibu`,`nama_ayah`,`tempat_lahir_ayah`,`tanggal_lahir_ayah`,`pendidikan_terakhir_ayah`,`pekerjaan_ayah`,`telepon_ayah`,`alamat`) USING HASH;
 
 --
 -- AUTO_INCREMENT for dumped tables

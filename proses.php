@@ -6,7 +6,6 @@ switch ($_GET['action']) {
         $id = NULL; // akan auto increment
 
         $nama = $_POST['nama'];
-        $nik = $_POST['nik'];
         $tempat_lahir = $_POST['tempat_lahir'];
         $tanggal_lahir = $_POST['tanggal_lahir'];
         $nisn = $_POST['nisn'];
@@ -31,7 +30,7 @@ switch ($_GET['action']) {
         $telepon_ayah = $_POST['telepon_ayah'];
 
         $query = "INSERT INTO db_siswa.data_siswa 
-            (nama, nik, tempat_lahir, tanggal_lahir, nisn,
+            (nama, tempat_lahir, tanggal_lahir, nisn,
             jenis_kelamin, agama, sekolah, telepon, alamat,
             
             nama_ibu, tempat_lahir_ibu, tanggal_lahir_ibu,
@@ -41,7 +40,7 @@ switch ($_GET['action']) {
             pendidikan_terakhir_ayah, pekerjaan_ayah, telepon_ayah)
 
             VALUES(
-                '$nama','$nik','$tempat_lahir','$tanggal_lahir','$nisn',
+                '$nama','$tempat_lahir','$tanggal_lahir','$nisn',
                 '$jenis_kelamin','$agama','$sekolah_asal','$telepon','$alamat',
 
                 '$nama_ibu','$tempat_lahir_ibu','$tanggal_lahir_ibu',
@@ -65,7 +64,6 @@ switch ($_GET['action']) {
         $id = $_POST['id'];
 
         $nama = $_POST['nama'];
-        $nik = $_POST['nik'];
         $tempat_lahir = $_POST['tempat_lahir'];
         $tanggal_lahir = $_POST['tanggal_lahir'];
         $nisn = $_POST['nisn'];

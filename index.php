@@ -1,7 +1,7 @@
 <?php
 $connect = mysqli_connect("localhost", "root", "", "db_siswa");
 
-$query = "SELECT id, nama, nik, nisn, sekolah, alamat FROM data_siswa";
+$query = "SELECT id, nama, nisn, sekolah, alamat FROM data_siswa";
 $result = mysqli_query($connect, $query);
 
 mysqli_close($connect);
@@ -63,7 +63,6 @@ mysqli_close($connect);
             <thead>
             <tr>
                 <th>Nama</th>
-                <th>NIK</th>
                 <th>NISN</th>
                 <th>Sekolah Asal</th>
                 <th>Alamat</th>
@@ -74,7 +73,6 @@ mysqli_close($connect);
             <?php while ($row = mysqli_fetch_assoc($result)): ?>
                 <tr>
                     <td><?= $row['nama'] ?></td>
-                    <td><?= $row['nik'] ?></td>
                     <td><?= $row['nisn'] ?></td>
                     <td><?= $row['sekolah'] ?></td>
                     <td><?= $row['alamat'] ?></td>
@@ -88,7 +86,7 @@ mysqli_close($connect);
             </tbody>
         </table>
     <?php else: ?>
-        <p style="text-align: center;">Data tidak ditemukan</p>
+        <p style="  text-align: center;">Data tidak ditemukan</p>
     <?php endif; ?>
 </div>
 

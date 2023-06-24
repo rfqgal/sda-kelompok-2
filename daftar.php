@@ -25,10 +25,6 @@
             <input type="text" name="nama" placeholder="nama lengkap" required />
         </p>
         <p>
-            <label for="nik">NIK:</label>
-            <input type="text" name="nik" placeholder="nik harus 12 digit" required />
-        </p>
-        <p>
             <label for="tempat_lahir">Tempat Lahir:</label>
             <input type="text" name="tempat_lahir" placeholder="tempat lahir" required />
         </p>

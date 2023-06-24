@@ -43,11 +43,6 @@ mysqli_close($connect);
                 <td><?= $siswa['nama'] ?></td>
             </tr>
             <tr>
-                <td style="text-transform: uppercase">nik</td>
-                <td class="table-horizontal-divider">:</td>
-                <td><?= $siswa['nik'] ?></td>
-            </tr>
-            <tr>
                 <td style="text-transform: uppercase">nisn</td>
                 <td class="table-horizontal-divider">:</td>
                 <td><?= $siswa['nisn'] ?></td>
