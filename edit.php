@@ -1,14 +1,3 @@
-<?php
-$connect = mysqli_connect("localhost","root","","db_siswa");
-
-$query = "SELECT * FROM db_siswa.data_siswa
-    WHERE id = " . $_GET['id'];
-$sql = mysqli_query($connect, $query);
-
-$siswa = mysqli_fetch_assoc($sql);
-
-mysqli_close($connect);
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -18,6 +7,18 @@ mysqli_close($connect);
     <link rel="stylesheet" href="css_file/daftar.css">
 </head>
 
+<?php
+$connect = mysqli_connect("localhost","root","","db_siswa");
+
+if (isset($_GET['id'])) {
+    $query = "SELECT * FROM db_siswa.data_siswa
+    WHERE id = " . $_GET['id'];
+    $sql = mysqli_query($connect, $query);
+    
+    $siswa = mysqli_fetch_assoc($sql);
+    
+    mysqli_close($connect);
+?>
 <body>
     <h1>PERUBAHAN DATA SISWA</h1>
 
@@ -218,4 +219,11 @@ mysqli_close($connect);
     </form>
 </body>
 
+
+
+<?php
+} else {
+    echo 'Data tidak ditemukan';
+}
+?>
 </html>

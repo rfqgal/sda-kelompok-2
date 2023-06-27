@@ -73,7 +73,7 @@ mysqli_close($connect);
             <tbody>
             <?php while ($row = mysqli_fetch_assoc($result)): ?>
                 <tr>
-                    <td><?= $row['nama'] ?></td>
+                    <td><?php echo $row['nama'] ?></td>
                     <td><?= $row['nik'] ?></td>
                     <td><?= $row['nisn'] ?></td>
                     <td><?= $row['sekolah'] ?></td>
